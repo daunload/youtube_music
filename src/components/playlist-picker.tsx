@@ -444,26 +444,6 @@ export default function PlaylistPicker() {
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
-              <label className="text-sm font-semibold text-gray-700">영상</label>
-              <select
-                value={videosLimit}
-                onChange={(e) => setVideosLimit(Number(e.target.value))}
-                className="rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-900 outline-none focus:border-gray-900"
-              >
-                <option value={50}>50개</option>
-                <option value={100}>100개</option>
-                <option value={200}>200개</option>
-                <option value={500}>500개</option>
-              </select>
-
-              <button
-                onClick={() => fetchPlaylistVideos(selected.id, videosLimit)}
-                disabled={videosLoading}
-                className="inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                영상 새로고침
-              </button>
-
               <button
                 onClick={requestRecommendations}
                 disabled={recLoading || videosLoading || videos.length === 0}
